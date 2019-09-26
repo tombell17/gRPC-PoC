@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCStreamService.Stream";
+
+package Stream;
+
+service Stream {
+	rpc GetStream (StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+	int32 amount = 1;
+}
+
+message StreamResponse {
+	int32 value = 1;
+}
